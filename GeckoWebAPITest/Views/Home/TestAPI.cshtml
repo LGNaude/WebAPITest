@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "TestAPI";
+}
+
+<h2>TestAPI</h2>
+<input type="button" id="testBTN" value="Test" />
+<div id="resultDiv"></div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#testBTN").on("click", function () {
+                $.get("/home/testme").done(function (result) {
+                    $("#resultDiv").html(result);
+                });
+            });
+        });
+
+        
+    </script>
+}
+
